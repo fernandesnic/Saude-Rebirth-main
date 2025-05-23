@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carteira de Vacina - Saúde Digital</title>
+  <link rel="stylesheet" href="css/vaccine.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="dashboard-header">
+    <a href="index.html" class="btn-back">
+      <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+    <h1>Carteira de Vacina</h1>
+  </header>
+
+  <main class="vaccine-main">
+    <div class="vaccine-container">
+      <!-- Formulário para adicionar vacinas -->
+      <div class="vaccine-form">
+        <h2><i class="fas fa-plus-circle"></i> Adicionar Vacina</h2>
+        <form id="vaccineForm">
+          <div class="form-group">
+            <label for="vaccineName">Nome da Vacina</label>
+            <input type="text" id="vaccineName" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vaccineDate">Data de Aplicação</label>
+              <input type="date" id="vaccineDate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="vaccineNextDose">Próxima Dose (opcional)</label>
+              <input type="date" id="vaccineNextDose" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="vaccineLocation">Local de Aplicação</label>
+            <input type="text" id="vaccineLocation" />
+          </div>
+
+          <div class="form-group">
+            <label for="vaccineNotes">Observações</label>
+            <textarea id="vaccineNotes" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn-save">
+            <i class="fas fa-save"></i> Salvar Vacina
+          </button>
+        </form>
+      </div>
+
+      <!-- Listagem de vacinas -->
+      <div class="vaccine-list">
+        <div class="list-header">
+          <h2><i class="fas fa-history"></i> Histórico de Vacinas</h2>
+          <div class="filter-group">
+            <label for="vaccineFilter">Filtrar:</label>
+            <select id="vaccineFilter">
+              <option value="all">Todas</option>
+              <option value="taken">Já tomadas</option>
+              <option value="pending">Próximas doses</option>
+            </select>
+          </div>
+        </div>
+        
+
+        <div class="vaccine-cards" id="vaccineCards">
+          <!-- As vacinas serão inseridas aqui via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/vaccine.js"></script>
+</body>
+</html>

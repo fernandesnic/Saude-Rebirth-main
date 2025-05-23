@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Controle de Medicamentos - Saúde Digital</title>
+  <link rel="stylesheet" href="css/medicine.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="dashboard-header">
+    <a href="index.html" class="btn-back">
+      <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+    <h1>Controle de Medicamentos</h1>
+  </header>
+
+  <main class="medicine-main">
+    <div class="medicine-container">
+      <!-- Formulário para adicionar medicamentos -->
+      <div class="medicine-form">
+        <h2><i class="fas fa-pills"></i> Adicionar Medicamento</h2>
+        <form id="medicineForm">
+          <div class="form-group">
+            <label for="medicineName">Nome do Medicamento</label>
+            <input type="text" id="medicineName" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="medicineDosage">Dosagem</label>
+              <input
+                type="text"
+                id="medicineDosage"
+                placeholder="Ex: 50mg"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="medicineFrequency">Frequência</label>
+              <select id="medicineFrequency" required>
+                <option value="">Selecione...</option>
+                <option value="diario">Diário</option>
+                <option value="semanal">Semanal</option>
+                <option value="mensal">Mensal</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="medicineStartDate">Data de Início</label>
+              <input type="date" id="medicineStartDate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="medicineEndDate">Data Final (opcional)</label>
+              <input type="date" id="medicineEndDate" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="medicineTimes">Horários (separados por vírgula)</label>
+            <input
+              type="text"
+              id="medicineTimes"
+              placeholder="Ex: 08:00, 20:00"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="medicineNotes">Observações</label>
+            <textarea id="medicineNotes" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn-save">
+            <i class="fas fa-save"></i> Salvar Medicamento
+          </button>
+        </form>
+      </div>
+
+      <!-- Listagem de medicamentos -->
+      <div class="medicine-list">
+        <div class="list-header">
+          <h2><i class="fas fa-list"></i> Meus Medicamentos</h2>
+          <div class="filter-group">
+            <label for="medicineFilter">Filtrar:</label>
+            <select id="medicineFilter">
+              <option value="all">Todos</option>
+              <option value="active">Em uso</option>
+              <option value="finished">Finalizados</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="medicine-cards" id="medicineCards">
+          <!-- Os medicamentos serão inseridos aqui via JavaScript -->
+        </div>
+      </div>
+
+      <!-- Lembretes -->
+      <div class="reminders">
+        <h2><i class="fas fa-bell"></i> Próximos Lembretes</h2>
+        <div class="reminder-list" id="reminderList">
+          <!-- Os lembretes serão inseridos aqui via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/medicine.js"></script>
+</body>
+</html>

@@ -1,256 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Saúde Digital</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="app-container" id="app">
-      <!-- Tela de Login -->
-      <div class="login-container" id="loginScreen">
-        <div class="login-card">
-          <div class="logo">
-            <i class="fas fa-heartbeat"></i>
-            <h1>Saúde Digital</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saúde Digital - Login</title>
+  <link rel="stylesheet" href="css/index.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="app-container" id="app">
+    <!-- Tela de Login -->
+    <div class="login-container" id="loginScreen">
+      <div class="login-card">
+        <div class="logo">
+          <i class="fas fa-heartbeat"></i>
+          <h1>Saúde Digital</h1>
+        </div>
+        <form id="loginForm">
+          <div class="input-group">
+            <label for="username"><i class="fas fa-user"></i> Usuário</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Digite seu usuário"
+              required
+            />
           </div>
-          <form id="loginForm">
-            <div class="input-group">
-              <label for="username"><i class="fas fa-user"></i> Usuário</label>
-              <input
-                type="text"
-                id="username"
-                placeholder="Digite seu usuário"
-                required
-              />
-            </div>
-            <div class="input-group">
-              <label for="password"><i class="fas fa-lock"></i> Senha</label>
-              <input
-                type="password"
-                id="password"
-                placeholder="Digite sua senha"
-                required
-              />
-            </div>
-            <button type="submit" class="btn-login">Entrar</button>
-          </form>
-          <div class="login-footer">
-            <a href="#" id="createAccount">Criar conta</a>
-            <a href="#" id="forgotPassword">Esqueci minha senha</a>
+          <div class="input-group">
+            <label for="password"><i class="fas fa-lock"></i> Senha</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Digite sua senha"
+              required
+            />
           </div>
+          <button type="submit" class="btn-login">Entrar</button>
+        </form>
+        <div class="login-footer">
+          <a href="#" id="createAccount">Criar conta</a>
+          <a href="#" id="forgotPassword">Esqueci minha senha</a>
         </div>
       </div>
-
-      <!-- Dashboard (inicialmente oculto) -->
-      <div
-        class="dashboard-container"
-        id="dashboardScreen"
-        style="display: none"
-      >
-        <header class="dashboard-header">
-          <div class="user-info">
-            <img src="https://ui-avatars.com/api/?name=Usuario" alt="Usuário" />
-            <span>Olá, Usuário</span>
-            
-          </div>
-          <button class="btn-logout" id="logoutBtn">
-            <i class="fas fa-sign-out-alt"></i>
-          </button>
-        </header>
-
-        <main class="dashboard-main">
-          <h2>Selecione o módulo</h2>
-          <div class="modules-grid">
-            <div class="module-card" id="vaccineCard">
-              <div class="module-icon">
-                <i class="fas fa-syringe"></i>
-              </div>
-              <h3>Carteira de Vacina</h3>
-              <p>Gerencie seu histórico de vacinação</p>
-            </div>
-
-            <div class="module-card" id="medicineCard">
-              <div class="module-icon">
-                <i class="fas fa-pills"></i>
-              </div>
-              <h3>Controle de Medicamentos</h3>
-              <p>Registre e acompanhe seus medicamentos</p>
-            </div>
-          </div>
-        </main>
-      </div>
-
-      <!-- Páginas dos módulos (inicialmente ocultas) -->
-      <div id="vaccinePage" style="display: none">
-        <header class="dashboard-header">
-          <button class="btn-back" id="backToDashboard1">
-            <i class="fas fa-arrow-left"></i> Voltar
-          </button>
-          <h1>Carteira de Vacina</h1>
-        </header>
-
-        <main class="vaccine-main">
-          <div class="vaccine-container">
-            <!-- Formulário para adicionar vacinas -->
-            <div class="vaccine-form">
-              <h2><i class="fas fa-plus-circle"></i> Adicionar Vacina</h2>
-              <form id="vaccineForm">
-                <div class="form-group">
-                  <label for="vaccineName">Nome da Vacina</label>
-                  <input type="text" id="vaccineName" required />
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="vaccineDate">Data de Aplicação</label>
-                    <input type="date" id="vaccineDate" required />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="vaccineNextDose">Próxima Dose (opcional)</label>
-                    <input type="date" id="vaccineNextDose" />
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="vaccineLocation">Local de Aplicação</label>
-                  <input type="text" id="vaccineLocation" />
-                </div>
-
-                <div class="form-group">
-                  <label for="vaccineNotes">Observações</label>
-                  <textarea id="vaccineNotes" rows="3"></textarea>
-                </div>
-
-                <button type="submit" class="btn-save">
-                  <i class="fas fa-save"></i> Salvar Vacina
-                </button>
-              </form>
-            </div>
-
-            <!-- Listagem de vacinas -->
-            <div class="vaccine-list">
-              <div class="list-header">
-                <h2><i class="fas fa-history"></i> Histórico de Vacinas</h2>
-                <div class="filter-group">
-                  <label for="vaccineFilter">Filtrar:</label>
-                  <select id="vaccineFilter">
-                    <option value="all">Todas</option>
-                    <option value="taken">Já tomadas</option>
-                    <option value="pending">Próximas doses</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="vaccine-cards" id="vaccineCards">
-                <!-- As vacinas serão inseridas aqui via JavaScript -->
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-
-      <div id="medicinePage" style="display:none;">
-        <header class="dashboard-header">
-            <button class="btn-back" id="backToDashboard2">
-                <i class="fas fa-arrow-left"></i> Voltar
-            </button>
-            <h1>Controle de Medicamentos</h1>
-        </header>
-        
-        <main class="medicine-main">
-            <div class="medicine-container">
-                <!-- Formulário para adicionar medicamentos -->
-                <div class="medicine-form">
-                    <h2><i class="fas fa-pills"></i> Adicionar Medicamento</h2>
-                    <form id="medicineForm">
-                        <div class="form-group">
-                            <label for="medicineName">Nome do Medicamento</label>
-                            <input type="text" id="medicineName" required>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="medicineDosage">Dosagem</label>
-                                <input type="text" id="medicineDosage" placeholder="Ex: 50mg" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="medicineFrequency">Frequência</label>
-                                <select id="medicineFrequency" required>
-                                    <option value="">Selecione...</option>
-                                    <option value="diario">Diário</option>
-                                    <option value="semanal">Semanal</option>
-                                    <option value="mensal">Mensal</option>
-                                    <option value="outro">Outro</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="medicineStartDate">Data de Início</label>
-                                <input type="date" id="medicineStartDate" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="medicineEndDate">Data Final (opcional)</label>
-                                <input type="date" id="medicineEndDate">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="medicineTimes">Horários (separados por vírgula)</label>
-                            <input type="text" id="medicineTimes" placeholder="Ex: 08:00, 20:00" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="medicineNotes">Observações</label>
-                            <textarea id="medicineNotes" rows="3"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-save">
-                            <i class="fas fa-save"></i> Salvar Medicamento
-                        </button>
-                    </form>
-                </div>
-                
-                <!-- Listagem de medicamentos -->
-                <div class="medicine-list">
-                    <div class="list-header">
-                        <h2><i class="fas fa-list"></i> Meus Medicamentos</h2>
-                        <div class="filter-group">
-                            <label for="medicineFilter">Filtrar:</label>
-                            <select id="medicineFilter">
-                                <option value="all">Todos</option>
-                                <option value="active">Em uso</option>
-                                <option value="finished">Finalizados</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="medicine-cards" id="medicineCards">
-                        <!-- Os medicamentos serão inseridos aqui via JavaScript -->
-                    </div>
-                </div>
-                
-                <!-- Lembretes -->
-                <div class="reminders">
-                    <h2><i class="fas fa-bell"></i> Próximos Lembretes</h2>
-                    <div class="reminder-list" id="reminderList">
-                        <!-- Os lembretes serão inseridos aqui via JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </main>
     </div>
 
-    <script src="app.js"></script>
-  </body>
+    <!-- Dashboard (inicialmente oculto) -->
+    <div
+      class="dashboard-container"
+      id="dashboardScreen"
+      style="display: none"
+    >
+      <header class="dashboard-header">
+        <div class="user-info">
+          <img src="https://ui-avatars.com/api/?name=Usuario" alt="Usuário" />
+          <span>Olá, Usuário</span>
+        </div>
+        <button class="btn-logout" id="logoutBtn">
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </header>
+
+      <main class="dashboard-main">
+        <h2>Selecione o módulo</h2>
+        <div class="modules-grid">
+          <a href="vaccine.html" class="module-card" id="vaccineCard">
+            <div class="module-icon">
+              <i class="fas fa-syringe"></i>
+            </div>
+            <h3>Carteira de Vacina</h3>
+            <p>Gerencie seu histórico de vacinação</p>
+          </a>
+
+          <a href="medicine.html" class="module-card" id="medicineCard">
+            <div class="module-icon">
+              <i class="fas fa-pills"></i>
+            </div>
+            <h3>Controle de Medicamentos</h3>
+            <p>Registre e acompanhe seus medicamentos</p>
+          </a>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
 </html>
