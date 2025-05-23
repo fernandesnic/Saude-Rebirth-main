@@ -258,7 +258,7 @@ body {
   box-shadow: var(--box-shadow);
   transition: var(--transition);
   cursor: pointer;
-    text-decoration: none !important; /* ← Adicione esta linha */
+  text-decoration: none !important; /* ← Adicione esta linha */
   border: 1px solid rgba(0, 0, 0, 0.03);
   position: relative;
   overflow: hidden;
@@ -419,4 +419,93 @@ body {
 }
 .module-card:nth-child(3) {
   animation-delay: 0.3s;
+}
+/* Carrossel Simples */
+.campaign-carousel-container {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.carousel-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.simple-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carousel-slide {
+  display: none;
+  text-align: center;
+  width: 100%;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-slide img.original-size {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.campaign-caption {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+  color: #4361ee;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 1.5rem;
+}
+
+.carousel-prev, .carousel-next {
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  background: #4361ee;
+  color: white;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #4361ee;
 }

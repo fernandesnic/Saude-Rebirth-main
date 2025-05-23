@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacinas Disponíveis - SUS</title>
+<link rel="stylesheet" href="css/cartilha.css">
+</head>
+<body>
+    <header class="dashboard-header">
+    <a href="index.html" class="btn-back">
+      <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+    <h1>Cartilhas de Vacina</h1>
+  </header>
+    <p>Selecione as vacinas pendentes para você ou sua família:</p>
+
+    <!-- Bebês e Crianças -->
+    <div class="vaccine-section">
+        <h2>Bebês e Crianças (0 a 10 anos)</h2>
+        <div class="vaccine-grid">
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">BCG</div>
+                    <div class="vaccine-description">Tuberculose</div>
+                    <div class="vaccine-age">Dose única ao nascer</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('BCG')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Pólio inativada</div>
+                    <div class="vaccine-description">Poliomielite (VIP)</div>
+                    <div class="vaccine-age">Aos 2, 4, 6 meses e 4 anos</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Pólio inativada')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Meningo C</div>
+                    <div class="vaccine-description">Meningite por meningococo C</div>
+                    <div class="vaccine-age">Aos 3, 5 e 12 meses</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Meningo C')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Tetra viral</div>
+                    <div class="vaccine-description">Sarampo, caxumba, rubéola e varicela</div>
+                    <div class="vaccine-age">15 meses</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Tetra viral')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Varicela</div>
+                    <div class="vaccine-description">Catapora</div>
+                    <div class="vaccine-age">4 anos (se não tomou a tetra viral)</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Varicela')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Hepatite B</div>
+                    <div class="vaccine-age">Ao nascer, 2 e 6 meses</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Hepatite B')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Rotavírus</div>
+                    <div class="vaccine-age">2 e 4 meses</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Rotavírus')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Febre amarela</div>
+                    <div class="vaccine-age">9 meses (em áreas de risco)</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Febre amarela')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">DTP</div>
+                    <div class="vaccine-description">Difteria, tétano e coqueluche</div>
+                    <div class="vaccine-age">2, 4, 6 meses e 4 anos</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('DTP')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Penta</div>
+                    <div class="vaccine-description">DTP + Hib + Hepatite B</div>
+                    <div class="vaccine-age">2, 4 e 6 meses</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Penta')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Pneumo 10</div>
+                    <div class="vaccine-description">Pneumocócica 10-valente</div>
+                    <div class="vaccine-age">2, 4 e 12 meses</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Pneumo 10')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Tríplice viral</div>
+                    <div class="vaccine-description">Sarampo, caxumba e rubéola</div>
+                    <div class="vaccine-age">12 meses e 5 anos</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Tríplice viral')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Hepatite A</div>
+                    <div class="vaccine-age">15 meses</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Hepatite A')">Selecionar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adolescentes -->
+    <div class="vaccine-section">
+        <h2>Adolescentes (9 a 19 anos)</h2>
+        <div class="vaccine-grid">
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">HPV quadrivalente</div>
+                    <div class="vaccine-description">Papilomavírus humano</div>
+                    <div class="vaccine-age">Meninas 9-14 anos (2 doses) e meninos 11-14 anos</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('HPV quadrivalente')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Meningocócica ACWY</div>
+                    <div class="vaccine-age">11-12 anos (dose única)</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Meningocócica ACWY')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Febre amarela</div>
+                    <div class="vaccine-age">Reforço se tomou antes dos 5 anos</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Febre amarela')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">dT (Difteria e tétano adulto)</div>
+                    <div class="vaccine-age">Reforço a cada 10 anos</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('dT')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">dTpa</div>
+                    <div class="vaccine-description">Difteria, tétano e coqueluche acelular</div>
+                    <div class="vaccine-age">Gestantes a cada gravidez</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('dTpa')">Selecionar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adultos e Idosos -->
+    <div class="vaccine-section">
+        <h2>Adultos (20-59 anos) e Idosos (60+ anos)</h2>
+        <div class="vaccine-grid">
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">dT (Difteria e tétano adulto)</div>
+                    <div class="vaccine-age">Reforço a cada 10 anos</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('dT')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Febre amarela</div>
+                    <div class="vaccine-age">Dose única (em áreas de risco)</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Febre amarela')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Hepatite B</div>
+                    <div class="vaccine-age">3 doses para não vacinados</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Hepatite B')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Tríplice viral</div>
+                    <div class="vaccine-description">Sarampo, caxumba e rubéola</div>
+                    <div class="vaccine-age">Até 49 anos (2 doses)</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Tríplice viral')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Pneumocócica 23-valente</div>
+                    <div class="vaccine-description">Pneumo 23</div>
+                    <div class="vaccine-age">Idosos e grupos de risco</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Pneumocócica 23')">Selecionar</button>
+            </div>
+
+            <div class="vaccine-card">
+                <div class="vaccine-info">
+                    <div class="vaccine-name">Covid-19</div>
+                    <div class="vaccine-age">Conforme esquema atualizado</div>
+                </div>
+                <button class="select-btn" onclick="selectVaccine('Covid-19')">Selecionar</button>
+            </div>
+        </div>
+    </div>
+<script src="js/cartilha.js"></script>
+</body>
+</html>
